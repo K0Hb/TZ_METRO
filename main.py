@@ -1,8 +1,8 @@
-from urllib.parse import urlparse
-from bs4 import BeautifulSoup
-import requests
 import re
+import requests
 import sqlite3
+from bs4 import BeautifulSoup
+from urllib.parse import urlparse
 
 
 def get_html(url):
@@ -12,6 +12,7 @@ def get_html(url):
     except Exception as error:
         print(f"Открыть страничку по адрессу {url}, неудалось. Ошибка: {error}")
     return html
+
 
 def parse_roskosmos_news():
     base_url = 'https://www.roscosmos.ru/102/'
@@ -32,6 +33,7 @@ def parse_roskosmos_news():
             news_head.append(news_name)
     print(f'На сайте roskosmos найдено {len(news_head)} новостей.')
     return news_head
+
 
 def write_db(news_list):
     try:
@@ -54,6 +56,7 @@ def write_db(news_list):
         if conn:
             conn.close()
             print("Соединение с SQLite закрыто")
+
 
 def main():
     news_list = parse_roskosmos_news()
