@@ -9,8 +9,6 @@ python = "^3.8"
 bs4 = "^0.0.1"
 requests = "^2.27.1"
 Flask = "^2.1.1"
-pip = "^22.0.4"
-Flask-Bootstrap = "^3.3.7"
 Flask-WTF = "^1.0.1"
 
 [tool.poetry.dev-dependencies]
