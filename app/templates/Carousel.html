@@ -37,29 +37,16 @@
                 </a>
             </div>
         </div>
-        <div class="container wrapper flex-grow-1 text-center">
+        <div class="container wrapper flex-grow-1">
             <h1 class="my-4">Регистрация</h1>
             <form method="post" class="form">
-                <!-- {{ form.hidden_tag() }} -->
-                <input type="hidden" name="csrfmiddlewaretoken" value="TuduvEF7eBm6Sl55wkvy79Ec7ykoGzq3fy2eacBmG0OC1mYG7trQUi8B6uVMxdI1">
-                <!-- <div class="form-group"> {{ form.first_name }} {{ form.first_name() }}</div> -->
-                <div class="form-group"><label for="id_first_name">Имя</label><input type="text" name="first_name" class="form-control" placeholder="Имя" title="" required="" id="id_first_name"></div>
-                <div class="form-group"><label for="id_last_name">Фамилия</label><input type="text" name="last_name" class="form-control" placeholder="Фамилия" title="" required="" id="id_last_name"></div>
-                <div class="form-group"><label for="id_username">Отчество</label><input type="text" name="fathers_name" class="form-control" placeholder="Отчество" title="" required="" id="id_fathers_name"></div>
-                <div class="form-group"><label for="id_username">Дата рождения</label><input type="text" name="date_of_birth" class="form-control" placeholder="Отчество" title="" required="" id="id_date_of_birth"></div>
-            <form method="get" class="form-inline center">
-                <div class="form-group"><label for="id_location">Место рождения</label>
-                    <div class="ml-2 mr-3">
-                        <select name="location" class="form-control" title="" id="id_location">
-                            <option value="1" selected="">---------</option>
-                            <option value="1">Москва</option>
-                            <option value="2">МО</option>
-                            <option value="2">Россия</option>
-                        </select>
-                    </div>
-                </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Отправить</button>
+                    <p>{{ form.first_name.label() }}: {{ form.first_name() }}</p>
+                    <p>{{ form.last_name.label() }}: {{ form.last_name() }}</p>
+                    <p>{{ form.fathers_name.label() }}: {{ form.fathers_name() }}</p>
+                    <p>{{ form.date_of_brith.label() }}: {{ form.date_of_brith() }}</p>
+                    <p>{{ form.location.label() }}: {{ form.location() }}</p>
+                    <p>{{ form.submit.label() }}: {{ form.submit() }}</p>
                 </div>
             </form>
         </div>
