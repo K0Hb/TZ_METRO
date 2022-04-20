@@ -1,0 +1,68 @@
+<html>
+    <head>
+        <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" rel="stylesheet">
+        <script crossorigin="anonymous" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script crossorigin="anonymous" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+        <title>Carousel</title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static',filename='myfont/css/all.min.css')}}">
+        <script src="{{url_for('static',filename='js/jquery.min.js')}}"></script>
+        <script src="{{url_for('static',filename='js/bootstrap.min.js')}}"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="text-primary text-center"> Наш метрополитен</h2>
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0"></li>
+                    <li data-target="#myCarousel" data-slide-to="1" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item">
+                        <img src="{{url_for('static',filename='img/2.jpg')}}" style="width:100%;height:800px;">
+                    </div>
+                    <div class="item active">
+                        <img src="{{url_for('static',filename='img/3.jpg')}}" style="width:100%;height:800px;">
+                    </div>
+                    <div class="item">
+                        <img src="{{url_for('static',filename='img/1.jpg')}}" style="width:100%;height:800px;">
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="fa fa-chevron-left fa-lg" style="margin-top:400px"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="fa fa-chevron-right fa-lg" style="margin-top:400px"></span>
+                </a>
+            </div>
+        </div>
+        <div class="container wrapper flex-grow-1 text-center">
+            <h1 class="my-4">Регистрация</h1>
+            <form method="post" class="form">
+                <!-- {{ form.hidden_tag() }} -->
+                <input type="hidden" name="csrfmiddlewaretoken" value="TuduvEF7eBm6Sl55wkvy79Ec7ykoGzq3fy2eacBmG0OC1mYG7trQUi8B6uVMxdI1">
+                <!-- <div class="form-group"> {{ form.first_name }} {{ form.first_name() }}</div> -->
+                <div class="form-group"><label for="id_first_name">Имя</label><input type="text" name="first_name" class="form-control" placeholder="Имя" title="" required="" id="id_first_name"></div>
+                <div class="form-group"><label for="id_last_name">Фамилия</label><input type="text" name="last_name" class="form-control" placeholder="Фамилия" title="" required="" id="id_last_name"></div>
+                <div class="form-group"><label for="id_username">Отчество</label><input type="text" name="fathers_name" class="form-control" placeholder="Отчество" title="" required="" id="id_fathers_name"></div>
+                <div class="form-group"><label for="id_username">Дата рождения</label><input type="text" name="date_of_birth" class="form-control" placeholder="Отчество" title="" required="" id="id_date_of_birth"></div>
+            <form method="get" class="form-inline center">
+                <div class="form-group"><label for="id_location">Место рождения</label>
+                    <div class="ml-2 mr-3">
+                        <select name="location" class="form-control" title="" id="id_location">
+                            <option value="1" selected="">---------</option>
+                            <option value="1">Москва</option>
+                            <option value="2">МО</option>
+                            <option value="2">Россия</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
+
